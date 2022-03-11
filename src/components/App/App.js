@@ -30,6 +30,6 @@ const App = () => {
 	    	<ItemList items = {items} />
 	    	<Footer count={8} />
 	    </div>);
-}
+};
 
 export default App;

@@ -8,15 +8,15 @@ import ListItem from '@mui/material/ListItem';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
-const ItemList = ({items}) => (<div>
+const ItemList = ({items, isDone, onClickDone}) => (<div>
 	{items.map(item => 
 		<ListItem key={item.id} className={styles.item}>
         	<ListItemIcon>
-           		<Checkbox color="primary" inputProps={{'aria-label': 'uncontrolled-checkbox'}} />
+           		<Checkbox color="primary" inputProps={{'aria-label': 'uncontrolled-checkbox'}} onClick = {() => console.log(item.isDone)} />
          	</ListItemIcon>
          	
          	<ListItemText> 
-         		<Item value={item.value} isDone={item.isDone} />
+         		<Item value={item.value} isDone={item.isDone} onClickDone={onClickDone} />
          	</ListItemText>
             
 			<IconButton aria-label="delete">

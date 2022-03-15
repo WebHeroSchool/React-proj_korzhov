@@ -10,7 +10,7 @@ class App extends React.Component {
 		{
 			value: 'Сверстать сайт по макету',
 			id: 1, 
-			isDone: true
+			isDone: false
 		},
 		{
 			value: 'Написать комментарии',
@@ -20,19 +20,30 @@ class App extends React.Component {
 		{
 			value: 'Уточнить информацию в footer',
 			id: 3,
-			isDone: true
-		}]
+			isDone: false
+		}],
+		count: 8
 	};
 
-	onClickDone = isDone => console.log (isDone);
+	onClickDone = id => {
+		const newItemList = this.state.items.map(item => {
+			const newItem = {...item};
+			if (item.id === id) {
+				newItem.isDone = !item.isDone;
+			}
+		return newItem; 
+		});
+
+		this.setState ({ items: newItemList});
+	};
 
 	render() {
 		return (
 		    <div className = {styles.wrap}>    
 		    <h1>Важные дела:</h1>
 		    	<InputItem />
-		    	<ItemList items = {this.state.items} onClickDone = {this.onClickDone} />
-		    	<Footer count={8} />
+		    	<ItemList items = {this.state.items} onClickDone={this.onClickDone} />
+		    	<Footer count={this.state.count} />
 		    </div>
 		);
 }};

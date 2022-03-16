@@ -27,8 +27,8 @@ const ItemList = ({items, isDone, onClickDone, id, onClickDelete}) => (<div>
          			id = {item.id} />
          	</ListItemText>
             
-			<IconButton aria-label="delete">
-				<DeleteIcon onClick = {() => onClickDelete(item.id)}/>
+			<IconButton aria-label="delete" onClick = {() => onClickDelete(item.id)}>
+				<DeleteIcon />
 			</IconButton>
        	</ListItem>)}
 </div>);

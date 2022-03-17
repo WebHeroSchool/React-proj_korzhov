@@ -36,5 +36,10 @@ const Item = ({value, isDone, onClickDone, id, onClickDelete, item}) => (
 			</IconButton>
 		</ListItem>
 	</div>);
+	
+Item.defaultProps = {
+	isDone: false,
+	id:0
+};
 
 export default Item;

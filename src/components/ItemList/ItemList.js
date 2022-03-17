@@ -1,35 +1,22 @@
 import React from 'react';
 import styles from './ItemList.module.css'
 import Item from '../Item/Item.js';
-import Checkbox from '@mui/material/Checkbox';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListItem from '@mui/material/ListItem';
-import DeleteIcon from '@mui/icons-material/Delete';
-import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
 
-const ItemList = ({items, isDone, onClickDone, id}) => (<div>
+
+const ItemList = ({items, onClickDone, onClickDelete}) => (<div>
 	{items.map(item => 
-		<ListItem key={item.id} className={styles.item}>
-        	<ListItemIcon>
-           		<Checkbox 
-           			color="primary" 
-           			inputProps={{'aria-label': 'uncontrolled-checkbox'}} 
-           			onClick = {() => onClickDone(item.id)} />
-         	</ListItemIcon>
-         	
-         	<ListItemText> 
+		<div key={item.id} className={styles.item}>
          		<Item 
          			value={item.value} 
          			isDone={item.isDone} 
          			onClickDone={onClickDone}
-         			id = {item.id} />
-         	</ListItemText>
-            
-			<IconButton aria-label="delete">
-				<DeleteIcon />
-			</IconButton>
-       	</ListItem>)}
+         			onClickDelete={onClickDelete}
+         			id = {item.id} 
+         		/>
+       	</div>)}
 </div>);
 
 export default ItemList;

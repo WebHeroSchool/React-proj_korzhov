@@ -4,6 +4,7 @@ import Fab from '@mui/material/Fab';
 import styles from './InputItem.module.css'
 import ListItemIcon from '@mui/material/ListItemIcon';
 import AddIcon from '@mui/icons-material/Add';
+import PropTypes from 'prop-types'
 
 class InputItem extends React.Component {
 	state = {
@@ -65,8 +66,8 @@ class InputItem extends React.Component {
 	}
 }
 
-InputItem.defaultProps = {
-	value: 'Добавить задание'
+InputItem.propTypes = {
+	isError: PropTypes.bool.isRequired
 }
 
 export default InputItem;

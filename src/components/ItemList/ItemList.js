@@ -8,7 +8,7 @@ import ListItem from '@mui/material/ListItem';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
-const ItemList = ({items, isDone, onClickDone, id}) => (<div>
+const ItemList = ({items, isDone, onClickDone, id, onClickDelete}) => (<div>
 	{items.map(item => 
 		<ListItem key={item.id} className={styles.item}>
         	<ListItemIcon>
@@ -23,10 +23,11 @@ const ItemList = ({items, isDone, onClickDone, id}) => (<div>
          			value={item.value} 
          			isDone={item.isDone} 
          			onClickDone={onClickDone}
+         			onClickDelete={onClickDelete}
          			id = {item.id} />
          	</ListItemText>
             
-			<IconButton aria-label="delete">
+			<IconButton aria-label="delete" onClick = {() => onClickDelete(item.id)}>
 				<DeleteIcon />
 			</IconButton>
        	</ListItem>)}

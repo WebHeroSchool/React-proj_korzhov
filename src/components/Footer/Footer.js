@@ -3,6 +3,7 @@ import styles from './Footer.module.css';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import PropTypes from 'prop-types'
 
 const buttons = [
   <Button key="one">All</Button>,
@@ -25,5 +26,9 @@ const Footer = ({count}) => (<footer className ={styles.wrap}>
 	</div>
 
 </footer>);
+
+Footer.propTypes = {
+	count: PropTypes.number
+};
 
 export default Footer;

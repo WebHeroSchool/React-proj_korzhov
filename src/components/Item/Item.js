@@ -37,9 +37,12 @@ const Item = ({value, isDone, onClickDone, id, onClickDelete, item}) => (
 		</ListItem>
 	</div>);
 	
-Item.defaultProps = {
-	isDone: false,
-	id:0
+Item.propTypes = {
+	isDone: PropTypes.bool,
+	value: PropTypes.string,
+	id: PropTypes.number,
+	onClickDone: PropTypes.func,
+	onClickDelete: PropTypes.func
 };
 
 export default Item;

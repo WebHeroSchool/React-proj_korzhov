@@ -66,8 +66,8 @@ class InputItem extends React.Component {
 	}
 }
 
-InputItem.defaultProps = {
-	value: 'Добавить задание'
+InputItem.propTypes = {
+	isError: PropTypes.bool
 }
 
 export default InputItem;

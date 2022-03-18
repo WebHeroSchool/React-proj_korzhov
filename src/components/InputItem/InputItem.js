@@ -66,8 +66,9 @@ class InputItem extends React.Component {
 	}
 }
 
-InputItem.defaultProps = {
-	error: false
+InputItem.propTypes = {
+	onClickAdd: PropTypes.func,
+	isError: PropTypes.bool
 }
 
 export default InputItem;

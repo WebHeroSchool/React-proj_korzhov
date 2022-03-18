@@ -10,17 +10,17 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
 class Item extends React.Component {
-	// componentDidMount() {
-	//     this.timer = setInterval(() => console.log('утечка'), 1000);
-	// }
+	componentDidMount() {
+	    this.timer = setInterval (() => console.log('Утечка'), 1000);
+	}
 
-	// componentDidUpdate() {
-	//     console.log('componentDidUpdate');
-	// }
+	componentDidUpdate() {
+	    console.log('componentDidUpdate');
+	}
 
-	// componentWillUnmount() {
-	//     clearInterval(this.timer);
-	// }	
+	componentWillUnmount() {
+	    clearInterval(this.timer)
+	}	
 
 	render(){
 		const {value, isDone, onClickDone, id, onClickDelete} = this.props;
@@ -54,10 +54,13 @@ class Item extends React.Component {
 	}
 }
 
-Item.defaultProps = {
-	isDone: false,
-	id: 0,
-	value: 'Купить фрукты'
-}
+Item.propTypes = {
+	isDone: PropTypes.bool,
+	value: PropTypes.string,
+	id: PropTypes.number,
+	onClickDone: PropTypes.func,
+	onClickDelete: PropTypes.func
+};
+
 
 export default Item;

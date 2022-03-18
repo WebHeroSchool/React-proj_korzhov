@@ -53,7 +53,7 @@ class Item extends React.Component {
 			</div>);
 	}
 }
-	
+
 Item.propTypes = {
 	isDone: PropTypes.bool,
 	value: PropTypes.string,
@@ -61,5 +61,6 @@ Item.propTypes = {
 	onClickDone: PropTypes.func,
 	onClickDelete: PropTypes.func
 };
+
 
 export default Item;

@@ -9,34 +9,39 @@ import ListItem from '@mui/material/ListItem';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
-const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
-	<div>
-		<ListItem>
-			<ListItemIcon>
-	           	<Checkbox 
-	       			color="primary" 
-	       			inputProps={{'aria-label': 'uncontrolled-checkbox'}} 
-	       			onClick = {() => onClickDone(id)} 
-	       		/>
-	        </ListItemIcon>
+class Item extends React.Component {
+	render(){
+		const {value, isDone, onClickDone, id, onClickDelete} = this.props;
+		return(
+			<div>
+				<ListItem>
+					<ListItemIcon>
+			           	<Checkbox 
+			       			color="primary" 
+			       			inputProps={{'aria-label': 'uncontrolled-checkbox'}} 
+			       			onClick = {() => onClickDone(id)} 
+			       		/>
+			        </ListItemIcon>
 
-	        <ListItemText> 
-				<span className = {
-					classnames ({
-						[styles.item]: true,
-						[styles.done]: isDone
-					})
-				}>
-					{value}
-				</span>;
-	        </ListItemText>
+			        <ListItemText> 
+						<span className = {
+							classnames ({
+								[styles.item]: true,
+								[styles.done]: isDone
+							})
+						}>
+							{value}
+						</span>;
+			        </ListItemText>
 
-			<IconButton aria-label="delete" onClick = {() => onClickDelete(id)} >
-				<DeleteIcon />
-			</IconButton>
-		</ListItem>
-	</div>);
-	
+					<IconButton aria-label="delete" onClick = {() => onClickDelete(id)} >
+						<DeleteIcon />
+					</IconButton>
+				</ListItem>
+			</div>);
+	}
+}
+
 Item.propTypes = {
 	isDone: PropTypes.bool,
 	value: PropTypes.string,

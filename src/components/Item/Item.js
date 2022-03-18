@@ -9,7 +9,7 @@ import ListItem from '@mui/material/ListItem';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
-const Item = ({value, isDone, onClickDone, id, onClickDelete, item}) => (
+const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
 	<div>
 		<ListItem>
 			<ListItemIcon>

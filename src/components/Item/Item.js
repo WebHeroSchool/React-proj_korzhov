@@ -10,20 +10,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
 class Item extends React.Component {
-	componentDidMount() {
-	    this.timer = setInterval (() => console.log('Утечка'), 1000);
-	}
-
-	componentDidUpdate() {
-	    console.log('componentDidUpdate');
-	}
-
-	componentWillUnmount() {
-	    clearInterval(this.timer)
-	}	
-
 	render(){
 		const {value, isDone, onClickDone, id, onClickDelete} = this.props;
+		
 		return(
 			<div>
 				<ListItem>

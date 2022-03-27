@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton';
 class Item extends React.Component {
 	render(){
 		const {value, isDone, onClickDone, id, onClickDelete} = this.props;
+		
 		return(
 			<div>
 				<ListItem>
